@@ -1,0 +1,2 @@
+# Ajax
+ Exercises of Ajax
