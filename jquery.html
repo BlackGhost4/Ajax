@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    </head>
+    <script>
+        /*
+        In this section we wait for the program to load and when the document is ready, the function is executed
+        */
+        $(document).ready(function(){
+            $("html").append(
+                /*
+                A few paragraphs are added to the HTML tag to apply various methods with the jquery
+                */
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                            <p id='1'>Paragraph 1</p>\
+                            <p id='2'>Paragraph 2</p>\
+                            <p id='3'>Paragraph 3</p>\
+                            <br>\
+                            <br>\
+                            <p>Change the color</p>\
+                            <p id='blue'>Blue</p>\
+                            <p id='red'>Red</p>\
+                            <p id='black'>Black</p>\
+                            <p id='yellow'>Yellow</p>\
+                            <p id='textColor'></p>\
+                        </div>\
+                    </div>\
+                </body>"
+            );
+            $("#2").css({"color":"red"});
+            $("#3").click(function() {
+                $("h1").hide();
+            });
+             /*
+            In the following lines, two events "mouseover" and "mouseleave" were configured,
+            which are executed when the mouse enters or leaves an element, respectively.
+            When positioned on a color, the p tag with id = 'textColor' is shown or hidden,
+            according to the color in which the pointer is positioned.
+            */
+            $("#blue").on({
+                "mouseover": function() {
+                    $("#textColor").css({"color":"blue"});
+                    $("#textColor").html("This is test of blue color");
+                    $("#textColor").show(1000);
+                },
+                "mouseleave": function() {
+                    $("#textColor").hide(1000);
+                }
+            })
+            $("#red").on({
+                "mouseover": function() {
+                    $("#textColor").css({"color":"red"});
+                    $("#textColor").html("This is test of red color");
+                    $("#textColor").show(1000);
+                },
+                "mouseleave": function() {
+                    $("#textColor").hide(1000);
+                }
+            })
+            $("#black").on({
+                "mouseover": function() {
+                    $("#textColor").css({"color":"black"});
+                    $("#textColor").html("This is test of black color");
+                    $("#textColor").show(1000);
+                },
+                "mouseleave": function() {
+                    $("#textColor").hide(1000);
+                }
+            })
+            $("#yellow").on({
+                "mouseover": function() {
+                    $("#textColor").css({"color":"yellow"});
+                    $("#textColor").html("This is test of yellow color");
+                    $("#textColor").show(1000);
+                },
+                "mouseleave": function() {
+                    $("#textColor").hide(1000);
+                }
+            })
+        })
+        </script>
+</html>
